@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+
+
+
+<header style="background-color:rgba(10, 101, 92, 0.608); padding: 10px;">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Loan Calculator</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <style>
+        .box {
+            background-color: #0deedf;
+            border: 1px solid black;
+            padding: 25px;
+        }
+    </style>
+
+    </head>
+
+    <body>
+        <div class="box">
+            <h1 style="font-family: Times New Roman; font-weight: bold; font-size: 2em; text-align: center;">
+                የብድር አከፋፈል ስሌት - Simple Loan Calculator</h1>
+        </div>
+        <section class="section">
+            <div class="container">
+                <div class="content ">
+
+
+                    <p style="font-size: 20px; font-family: Times New Roman; color: rgb(246, 246, 246);">
+                        A simple loan calculator is a financial tool used to calculate the monthly payments and total
+                        interest payable on a loan.
+                        It typically takes into account the loan amount, the interest rate,
+                        and the loan term to determine the amount that needs to be paid each month to fully repay the
+                        loan,
+                        along with the total interest payable over the course of the loan.
+                    </p>
+                </div>
+
+                <div class="colums">
+                    <div class="colum is-three-quarters">
+                        <div class="card">
+                            <div class="card-content">
+                                <form id="loan-form">
+                                    <div class="level">
+                                        <!--Left side -->
+                                        <div class="level-left is mardinless">
+                                            <div class="level-item">
+                                                <p class="number">1</p>
+                                                <p style="font-weight: bold; font-family: Times New Roman;">የብድር መጠን
+                                                    Loan
+                                                    Amount</p>
+                                            </div>
+                                        </div>
+
+                                        <!---Right side-->
+                                        <div class="level-right">
+                                            <div class="level-item">
+                                                <div class="field">
+                                                    <div class="control has-icons-left">
+                                                        <input class="input" id="amount" type="number" />
+                                                        <span class="icon is-small is-left">ብር
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="level">
+                                        <!-- Left side -->
+                                        <div class="level-left is-marginless">
+                                            <div class="level-item">
+                                                <p class="number">2</p>
+                                                <p style="font-weight: bold; font-family: Times New Roman;">የወለድ መጠን
+                                                    Interest Rate
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <!-- Right side -->
+                                        <div class="level-right">
+                                            <div class="level-item">
+                                                <div class="field">
+                                                    <div class="control has-icons-right">
+                                                        <input class="input" id="interest" type="number" />
+                                                        <span class="icon is-small is-right">
+                                                            <i class="fa fa-percentage"></i>
+
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="level">
+                                        <!-- Left side -->
+                                        <div class="level-left is-marginless">
+                                            <div class="level-item">
+                                                <p class="number">3</p>
+                                                <p style="font-weight: bold; font-family: Times New Roman;">ዓመት Number
+                                                    of
+                                                    Years
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <!-- Right side -->
+                                        <div class="level-right">
+                                            <div class="level-item">
+                                                <div class="field">
+                                                    <div class="control has-icons-left">
+                                                        <input class="input" id="years" type="number" />
+                                                        <span class="icon is-small is-left">
+                                                            <i class="fa fa-calendar"></i>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="control">
+
+                                        <button class="button is-large is-fullwidth is-primary is-outlined ">
+
+
+                                            <p style="font-family: Times New Roman; font-weight: bold;">Calculate</p>
+                                        </button>
+
+                                    </div>
+
+
+
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+        </section>
+
+        <!-- RESULTS -->
+        <section class="section">
+            <h1 class="title " style="font-family: Times New Roman; font-weight: bold; color: rgb(246, 246, 246);">
+                Calculated Results</h1>
+            <div class="columns is-multiline">
+
+                <div class="column is-12-tablet is-6-desktop is-3-widescreen">
+                    <div class="notification is-primary has-text">
+                        <p id="monthlyPayment" class="title is-1">ብር</p>
+                        <p class="subtitle is-4">Monthly Payments</p>
+                    </div>
+                </div>
+
+                <div class="column is-12-tablet is-6-desktop is-3-widescreen">
+                    <div class="notification is-info has-text">
+                        <p id="totalInterest" class="title is-1">%</p>
+                        <p class="subtitle is-4">Total Interest</p>
+                    </div>
+                </div>
+
+                <div class="column is-12-tablet is-6-desktop is-3-widescreen">
+                    <div class="notification is-link has-text">
+                        <p id="totalPayment" class="title is-1">ብር</p>
+                        <p class="subtitle is-4">Total Amount</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+
+    </body>
+
+    <script src="me.js"></script>
+
+</html>
